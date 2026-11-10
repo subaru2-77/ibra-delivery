@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ibra Delivery | شريكك الموثوق للتوصيل السريع وخدمات الدفع عند الاستلام</title>
+    <title>IBRA DELIVERY TANGER | كل ما تحتاجه يوصلك لباب دارك في طنجة</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,17 +13,16 @@
 
     <style>
         :root {
-            --primary: #2563eb;
-            --primary-dark: #1d4ed8;
-            --secondary: #10b981;
-            --accent: #f59e0b;
-            --dark: #0f172a;
-            --gray-light: #f8fafc;
-            --gray-border: #e2e8f0;
-            --text-main: #334155;
+            --primary-blue: #0088ff;
+            --primary-neon: #00d2ff;
+            --dark-bg: #070d18;
+            --dark-card: #0d1726;
+            --dark-card-hover: #132238;
             --white: #ffffff;
-            --shadow-sm: 0 4px 6px -1px rgba(0,0,0,0.05);
-            --shadow-lg: 0 20px 25px -5px rgba(0,0,0,0.08), 0 8px 10px -6px rgba(0,0,0,0.05);
+            --gray-text: #94a3b8;
+            --accent-green: #25d366;
+            --price-badge: #00f0ff;
+            --border-glow: rgba(0, 136, 255, 0.25);
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
@@ -39,9 +38,10 @@
         }
 
         body {
-            background-color: var(--gray-light);
-            color: var(--text-main);
+            background-color: var(--dark-bg);
+            color: #f1f5f9;
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
         .container {
@@ -56,10 +56,10 @@
             position: sticky;
             top: 0;
             z-index: 999;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--gray-border);
-            padding: 15px 0;
+            background: rgba(7, 13, 24, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0, 136, 255, 0.2);
+            padding: 12px 0;
         }
 
         .nav-content {
@@ -68,35 +68,42 @@
             align-items: center;
         }
 
-        .logo {
-            font-size: 1.6rem;
-            font-weight: 900;
-            color: var(--dark);
-            text-decoration: none;
+        .brand-logo {
             display: flex;
             align-items: center;
-            gap: 8px;
-        }
-
-        .logo span {
-            color: var(--primary);
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 25px;
-        }
-
-        .nav-links a {
+            gap: 12px;
             text-decoration: none;
-            color: var(--text-main);
-            font-weight: 600;
-            transition: var(--transition);
         }
 
-        .nav-links a:hover {
-            color: var(--primary);
+        .logo-img {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary-neon);
+            box-shadow: 0 0 10px rgba(0, 210, 255, 0.4);
+        }
+
+        .brand-logo i {
+            font-size: 1.8rem;
+            color: var(--primary-neon);
+        }
+
+        .brand-title {
+            font-size: 1.35rem;
+            font-weight: 900;
+            color: var(--white);
+            letter-spacing: 0.5px;
+        }
+
+        .brand-title span {
+            color: var(--primary-blue);
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
         .btn {
@@ -104,124 +111,138 @@
             align-items: center;
             justify-content: center;
             gap: 8px;
-            padding: 12px 24px;
-            font-size: 0.95rem;
+            padding: 10px 18px;
+            font-size: 0.92rem;
             font-weight: 700;
-            border-radius: 10px;
+            border-radius: 12px;
             text-decoration: none;
             transition: var(--transition);
             cursor: pointer;
             border: none;
         }
 
-        .btn-primary {
-            background-color: var(--primary);
-            color: var(--white);
-        }
-
-        .btn-primary:hover {
-            background-color: var(--primary-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.3);
-        }
-
         .btn-whatsapp {
-            background-color: #22c55e;
+            background-color: var(--accent-green);
             color: var(--white);
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
         }
 
         .btn-whatsapp:hover {
-            background-color: #16a34a;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+        }
+
+        .btn-instagram {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            color: var(--white);
+        }
+
+        .btn-instagram:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(220, 39, 67, 0.4);
+        }
+
+        .btn-phone {
+            background-color: var(--primary-blue);
+            color: var(--white);
+        }
+
+        .btn-phone:hover {
+            background-color: #0070d6;
             transform: translateY(-2px);
         }
 
-        /* Hero Section */
+        /* Hero */
         .hero {
-            padding: 80px 0 60px;
-            background: radial-gradient(circle at top right, #e0e7ff 0%, #f8fafc 60%);
+            padding: 60px 0 50px;
+            position: relative;
+            background: radial-gradient(circle at 50% 20%, rgba(0, 136, 255, 0.15) 0%, transparent 65%);
         }
 
         .hero-grid {
             display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 50px;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 40px;
             align-items: center;
         }
 
-        .badge-pill {
+        .city-badge {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: #dbeafe;
-            color: var(--primary);
-            padding: 6px 14px;
-            border-radius: 50px;
-            font-size: 0.85rem;
+            background: rgba(0, 136, 255, 0.15);
+            border: 1px solid rgba(0, 210, 255, 0.4);
+            color: var(--primary-neon);
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 0.9rem;
             font-weight: 700;
             margin-bottom: 20px;
         }
 
         .hero-title {
-            font-size: 2.8rem;
+            font-size: 2.7rem;
             font-weight: 900;
-            color: var(--dark);
             line-height: 1.25;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
+            color: var(--white);
         }
 
         .hero-title span {
-            color: var(--primary);
+            background: linear-gradient(90deg, #00d2ff, #0088ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .hero-desc {
             font-size: 1.15rem;
-            color: #64748b;
+            color: #cbd5e1;
+            margin-bottom: 25px;
+        }
+
+        .pricing-banner {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            background: rgba(0, 210, 255, 0.08);
+            border: 1px dashed rgba(0, 210, 255, 0.5);
+            padding: 12px 20px;
+            border-radius: 14px;
             margin-bottom: 30px;
         }
 
-        .hero-features {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-bottom: 35px;
+        .pricing-banner .price {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--price-badge);
         }
 
-        .hero-feature-item {
+        /* Order Form Box */
+        .order-box {
+            background: var(--dark-card);
+            border: 1px solid var(--border-glow);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .order-box h3 {
+            font-size: 1.35rem;
+            color: var(--white);
+            margin-bottom: 8px;
             display: flex;
             align-items: center;
-            gap: 8px;
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: var(--dark);
+            gap: 10px;
         }
 
-        .hero-feature-item i {
-            color: var(--secondary);
-        }
-
-        /* Quick Order Card */
-        .order-card {
-            background: var(--white);
-            padding: 35px;
-            border-radius: 20px;
-            box-shadow: var(--shadow-lg);
-            border: 1px solid var(--gray-border);
-        }
-
-        .order-card h3 {
-            font-size: 1.4rem;
-            color: var(--dark);
-            margin-bottom: 8px;
-        }
-
-        .order-card p {
-            color: #64748b;
+        .order-box p {
+            color: var(--gray-text);
             font-size: 0.9rem;
             margin-bottom: 20px;
         }
 
         .form-group {
-            margin-bottom: 15px;
+            margin-bottom: 14px;
         }
 
         .form-group label {
@@ -229,277 +250,230 @@
             font-size: 0.85rem;
             font-weight: 700;
             margin-bottom: 6px;
-            color: var(--dark);
+            color: #e2e8f0;
         }
 
         .form-control {
             width: 100%;
-            padding: 12px 14px;
-            border-radius: 8px;
-            border: 1.5px solid var(--gray-border);
+            padding: 12px;
+            border-radius: 10px;
+            background: #09101c;
+            border: 1px solid #1e293b;
+            color: var(--white);
             font-size: 0.95rem;
             outline: none;
             transition: var(--transition);
         }
 
         .form-control:focus {
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+            border-color: var(--primary-neon);
+            box-shadow: 0 0 10px rgba(0, 210, 255, 0.25);
         }
 
-        /* Stats */
-        .stats {
-            background: var(--white);
-            padding: 40px 0;
-            border-top: 1px solid var(--gray-border);
-            border-bottom: 1px solid var(--gray-border);
+        /* Features strip */
+        .features-strip {
+            background: #0b1322;
+            padding: 25px 0;
+            border-top: 1px solid rgba(0, 136, 255, 0.15);
+            border-bottom: 1px solid rgba(0, 136, 255, 0.15);
         }
 
-        .stats-grid {
+        .features-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 20px;
             text-align: center;
         }
 
-        .stat-item h4 {
-            font-size: 2.2rem;
-            font-weight: 900;
-            color: var(--primary);
-            margin-bottom: 5px;
+        .feat-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-size: 1rem;
+            font-weight: 700;
+            color: #e2e8f0;
         }
 
-        .stat-item p {
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: #64748b;
+        .feat-item i {
+            color: var(--primary-neon);
+            font-size: 1.3rem;
         }
 
-        /* Services */
-        .services {
-            padding: 80px 0;
+        /* Catalog Section */
+        .catalog {
+            padding: 70px 0;
         }
 
         .section-header {
             text-align: center;
             max-width: 650px;
-            margin: 0 auto 50px;
+            margin: 0 auto 45px;
         }
 
         .section-header h2 {
-            font-size: 2.2rem;
-            font-weight: 800;
-            color: var(--dark);
-            margin-bottom: 12px;
-        }
-
-        .section-header p {
-            color: #64748b;
-            font-size: 1.05rem;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-        }
-
-        .service-card {
-            background: var(--white);
-            padding: 30px;
-            border-radius: 16px;
-            border: 1px solid var(--gray-border);
-            transition: var(--transition);
-        }
-
-        .service-card:hover {
-            transform: translateY(-6px);
-            box-shadow: var(--shadow-lg);
-            border-color: #cbd5e1;
-        }
-
-        .service-icon {
-            width: 60px;
-            height: 60px;
-            background: #eff6ff;
-            color: var(--primary);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.6rem;
-            margin-bottom: 20px;
-        }
-
-        .service-card h3 {
-            font-size: 1.25rem;
-            color: var(--dark);
+            font-size: 2.3rem;
+            font-weight: 900;
+            color: var(--white);
             margin-bottom: 10px;
         }
 
-        .service-card p {
-            font-size: 0.95rem;
-            color: #64748b;
+        .section-header p {
+            color: var(--gray-text);
+            font-size: 1.05rem;
         }
 
-        /* How it works */
-        .how-it-works {
-            background: var(--white);
-            padding: 80px 0;
-        }
-
-        .steps-grid {
+        .catalog-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            position: relative;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
         }
 
-        .step-card {
-            text-align: center;
-            padding: 20px;
+        .catalog-item {
+            background: var(--dark-card);
+            border: 1px solid #1e293b;
+            border-radius: 16px;
+            padding: 24px;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
-        .step-number {
-            width: 48px;
-            height: 48px;
-            background: var(--primary);
-            color: var(--white);
-            border-radius: 50%;
+        .catalog-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-blue);
+            background: var(--dark-card-hover);
+            box-shadow: 0 10px 25px rgba(0, 136, 255, 0.15);
+        }
+
+        .cat-icon-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .cat-icon {
+            width: 46px;
+            height: 46px;
+            border-radius: 10px;
+            background: rgba(0, 136, 255, 0.15);
+            color: var(--primary-neon);
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1.3rem;
-            font-weight: 800;
-            margin: 0 auto 20px;
-            box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
         }
 
-        .step-card h3 {
-            margin-bottom: 10px;
-            color: var(--dark);
-        }
-
-        .step-card p {
-            color: #64748b;
-            font-size: 0.95rem;
-        }
-
-        /* FAQ */
-        .faq {
-            padding: 80px 0;
-        }
-
-        .faq-item {
-            background: var(--white);
-            border-radius: 12px;
-            border: 1px solid var(--gray-border);
-            margin-bottom: 15px;
-            overflow: hidden;
-        }
-
-        .faq-question {
-            width: 100%;
-            padding: 20px;
-            text-align: right;
-            background: none;
-            border: none;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 1.05rem;
-            font-weight: 700;
-            color: var(--dark);
-            cursor: pointer;
-        }
-
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out;
-            padding: 0 20px;
-            color: #64748b;
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        .faq-item.active .faq-answer {
-            padding-bottom: 20px;
-        }
-
-        .faq-item.active i {
-            transform: rotate(180deg);
-        }
-
-        /* CTA Banner */
-        .cta-banner {
-            background: linear-gradient(135deg, var(--primary) 0%, #1e40af 100%);
+        .catalog-item h3 {
+            font-size: 1.2rem;
             color: var(--white);
-            padding: 60px 0;
-            text-align: center;
-            border-radius: 24px;
-            margin: 40px auto;
         }
 
-        .cta-banner h2 {
-            font-size: 2.2rem;
+        .catalog-item p {
+            color: var(--gray-text);
+            font-size: 0.9rem;
+            line-height: 1.5;
             margin-bottom: 15px;
         }
 
-        .cta-banner p {
+        .cat-tag {
+            font-size: 0.8rem;
+            color: var(--primary-neon);
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Coverage banner Tanger */
+        .coverage-box {
+            background: linear-gradient(135deg, #091a35 0%, #0c2752 100%);
+            border: 1px solid var(--primary-blue);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            margin: 40px 0 70px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .coverage-box h2 {
+            font-size: 2rem;
+            color: var(--white);
+            margin-bottom: 12px;
+        }
+
+        .coverage-box p {
+            color: #cbd5e1;
             font-size: 1.1rem;
-            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto 25px;
+        }
+
+        .neighborhoods {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
             margin-bottom: 30px;
+        }
+
+        .neighborhood-tag {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: #f1f5f9;
+        }
+
+        .contact-strip {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
         }
 
         /* Footer */
         .footer {
-            background: var(--dark);
-            color: #94a3b8;
-            padding: 60px 0 20px;
+            background: #040810;
+            padding: 40px 0 20px;
+            border-top: 1px solid #131d2e;
+            text-align: center;
         }
 
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            gap: 40px;
-            margin-bottom: 40px;
+        .footer p {
+            color: var(--gray-text);
+            font-size: 0.9rem;
+            margin-bottom: 12px;
         }
 
-        .footer-brand h3 {
+        .footer-socials {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .footer-socials a {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: #0f1c30;
             color: var(--white);
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-        }
-
-        .footer-links h4 {
-            color: var(--white);
-            margin-bottom: 15px;
-        }
-
-        .footer-links ul {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 10px;
-        }
-
-        .footer-links a {
-            color: #94a3b8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
             text-decoration: none;
             transition: var(--transition);
         }
 
-        .footer-links a:hover {
-            color: var(--white);
-        }
-
-        .footer-bottom {
-            border-top: 1px solid #1e293b;
-            padding-top: 20px;
-            text-align: center;
-            font-size: 0.85rem;
+        .footer-socials a:hover {
+            background: var(--primary-blue);
+            transform: translateY(-3px);
         }
 
         /* Floating WhatsApp Button */
@@ -509,14 +483,14 @@
             left: 25px;
             width: 60px;
             height: 60px;
-            background-color: #25d366;
+            background-color: var(--accent-green);
             color: var(--white);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 32px;
-            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.4);
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
             z-index: 9999;
             text-decoration: none;
             transition: var(--transition);
@@ -527,42 +501,44 @@
         }
 
         /* Responsive */
-        @media (max-width: 992px) {
-            .hero-grid, .services-grid, .steps-grid, .stats-grid, .footer-grid {
+        @media (max-width: 900px) {
+            .hero-grid {
                 grid-template-columns: 1fr;
             }
 
             .hero-title {
-                font-size: 2.2rem;
+                font-size: 2.1rem;
             }
 
-            .nav-links {
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .nav-actions .btn span {
                 display: none;
-            }
-
-            .order-card {
-                margin-top: 20px;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Sticky Navigation -->
+    <!-- Navbar -->
     <nav class="navbar">
         <div class="container nav-content">
-            <a href="#" class="logo">
-                <i class="fa-solid fa-truck-fast"></i> IBRA <span>DELIVERY</span>
+            <a href="#" class="brand-logo">
+                <!-- If you upload logo.png to github repository, it appears here automatically -->
+                <img src="logo.png" alt="Logo" class="logo-img" onerror="this.style.display='none'; document.getElementById('fallback-icon').style.display='inline-block';">
+                <i id="fallback-icon" class="fa-solid fa-motorcycle" style="display:none;"></i>
+                <div class="brand-title">IBRA <span>DELIVERY</span> TANGER</div>
             </a>
-            <ul class="nav-links">
-                <li><a href="#services">خدماتنا</a></li>
-                <li><a href="#how-it-works">كيف نعمل</a></li>
-                <li><a href="#faq">الأسئلة الشائعة</a></li>
-                <li><a href="#contact">تواصل معنا</a></li>
-            </ul>
-            <a href="https://wa.me/212600000000?text=السلام%20عليكم،%20أريد%20معلومات%20عن%20خدمة%20التوصيل" target="_blank" class="btn btn-whatsapp">
-                <i class="fa-brands fa-whatsapp"></i> تواصل واتساب
-            </a>
+            <div class="nav-actions">
+                <a href="https://www.instagram.com/ibra_delivery_tanger?xtok=MXZybm5kcDNpZHZ1ZA==" target="_blank" class="btn btn-instagram" title="إنستغرام">
+                    <i class="fa-brands fa-instagram"></i> <span>Instagram</span>
+                </a>
+                <a href="https://wa.me/message/ZVMJZFONM6AHO1" target="_blank" class="btn btn-whatsapp" title="واتساب">
+                    <i class="fa-brands fa-whatsapp"></i> <span>واتساب</span>
+                </a>
+            </div>
         </div>
     </nav>
 
@@ -570,73 +546,70 @@
     <section class="hero">
         <div class="container hero-grid">
             <div>
-                <span class="badge-pill">
-                    <i class="fa-solid fa-bolt"></i> تسليم سريع، دقيق وموثوق
+                <span class="city-badge">
+                    <i class="fa-solid fa-location-dot"></i> التوصيل داخل طنجة فقط Partout à Tanger
                 </span>
                 <h1 class="hero-title">
-                    وصّل طرودك لزبنائك <span>بكل ثقة وسرعة</span>
+                    كل ما تحتاجه <span>يوصلك لباب دارك!</span> 🛵💙
                 </h1>
                 <p class="hero-desc">
-                    خدمة توصيل احترافية للمتاجر الإلكترونية والأفراد مع تحصيل الأموال عند الاستلام (COD) وتحويلها في أقل من 24 ساعة.
+                    خدمات التوصيل بكل حب واحترافية في طنجة، بسرعة وأمان حتى لباب منزلك. خلي علينا التوصيل ونتا ارتاح! 😉
                 </p>
 
-                <div class="hero-features">
-                    <div class="hero-feature-item">
-                        <i class="fa-solid fa-circle-check"></i> توصيل خلال 24 - 48 ساعة
-                    </div>
-                    <div class="hero-feature-item">
-                        <i class="fa-solid fa-circle-check"></i> إدارة المرتجعات باحترافية
-                    </div>
-                    <div class="hero-feature-item">
-                        <i class="fa-solid fa-circle-check"></i> تأكيد العناوين هاتفياً
+                <div class="pricing-banner">
+                    <i class="fa-solid fa-tag" style="color: var(--price-badge); font-size: 1.4rem;"></i>
+                    <div>
+                        <span style="font-size: 0.9rem; color: #94a3b8; display: block;">سعر التوصيل:</span>
+                        <span class="price">ابتداءً من 25 درهم</span> <small style="color: #cbd5e1;">(حسب المسافة)</small>
                     </div>
                 </div>
 
-                <div style="display: flex; gap: 15px; flex-wrap: wrap;">
-                    <a href="#order-form" class="btn btn-primary">
-                        <i class="fa-solid fa-paper-plane"></i> احجز شحنتك الآن
+                <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                    <a href="https://wa.me/message/ZVMJZFONM6AHO1" target="_blank" class="btn btn-whatsapp" style="font-size: 1.05rem; padding: 13px 25px;">
+                        <i class="fa-brands fa-whatsapp"></i> اطلب الآن عبر واتساب
                     </a>
-                    <a href="tel:+212600000000" class="btn" style="background:#e2e8f0; color:var(--dark);">
-                        <i class="fa-solid fa-phone"></i> اتصل بنا
+                    <a href="tel:0689784021" class="btn btn-phone" style="font-size: 1.05rem; padding: 13px 25px;">
+                        <i class="fa-solid fa-phone"></i> 0689784021
                     </a>
                 </div>
             </div>
 
             <!-- Quick Booking Card -->
-            <div class="order-card" id="order-form">
-                <h3>طلب توصيل سريع 📦</h3>
-                <p>املأ البيانات وسيتم التواصل معك خلال دقائق لتأكيد الاستلام</p>
+            <div class="order-box">
+                <h3><i class="fa-solid fa-paper-plane" style="color: var(--primary-neon);"></i> احجز توصيلتك في طنجة</h3>
+                <p>حدد طلبك وسنتواصل معك فوراً لتأكيد الاستلام والتسليم</p>
 
-                <form id="deliveryForm">
+                <form id="tangerForm">
                     <div class="form-group">
-                        <label>الاسم الكامل أو اسم المتجر</label>
-                        <input type="text" id="clientName" class="form-control" placeholder="مثال: متجر الأناقة" required>
+                        <label>الاسم الكامل / اسم المحل</label>
+                        <input type="text" id="custName" class="form-control" placeholder="مثال: يوسف أو متجر الهدى" required>
                     </div>
 
                     <div class="form-group">
-                        <label>رقم الهاتف / الواتساب</label>
-                        <input type="tel" id="clientPhone" class="form-control" placeholder="مثال: 0612345678" required>
+                        <label>الحي / العنوان بطنجة</label>
+                        <input type="text" id="custArea" class="form-control" placeholder="مثال: مالاباطا، النجمة، مسنانة..." required>
                     </div>
 
                     <div class="form-group">
-                        <label>مدينة التوصيل</label>
-                        <select id="clientCity" class="form-control" required>
-                            <option value="">اختر المدينة...</option>
-                            <option value="طنجة والنواحي">طنجة والنواحي</option>
-                            <option value="الدار البيضاء">الدار البيضاء</option>
-                            <option value="الرباط / سلا">الرباط / سلا</option>
-                            <option value="مراكش">مراكش</option>
-                            <option value="فاس ومكناس">فاس ومكناس</option>
-                            <option value="مدينة أخرى">مدينة أخرى (سائر المدن)</option>
+                        <label>نوع الطلبية</label>
+                        <select id="custOrderType" class="form-control" required>
+                            <option value="هدايا ومفاجآت 🎁">🎁 هدايا، ورود ومفاجآت</option>
+                            <option value="وجبات ومطاعم 🍔">🍔 وجبات ومطاعم</option>
+                            <option value="مواد غذائية وتسوق 🛒">🛒 مواد غذائية وتسوق</option>
+                            <option value="أدوية ومستلزمات صيدلية 💊">💊 أدوية ومستلزمات صيدلية</option>
+                            <option value="إلكترونيات وهواتف 📱">📱 إلكترونيات وهواتف</option>
+                            <option value="ملابس وأحذية 👕">👕 ملابس وأحذية</option>
+                            <option value="وثائق وأوراق إدارية 📄">📄 وثائق وأوراق هامة</option>
+                            <option value="طلبية خاصة أخرى 📦">📦 طلبية أو غرض آخر</option>
                         </select>
                     </div>
 
                     <div class="form-group">
-                        <label>عدد الطرود المتوقعة</label>
-                        <input type="number" id="parcelCount" class="form-control" placeholder="مثال: 5" min="1" required>
+                        <label>تفاصيل إضافية (اختياري)</label>
+                        <input type="text" id="custNotes" class="form-control" placeholder="أي ملاحظة بخصوص التوقيت أو الطلب">
                     </div>
 
-                    <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 10px;">
+                    <button type="submit" class="btn btn-whatsapp" style="width: 100%; margin-top: 8px; padding: 13px;">
                         <i class="fa-brands fa-whatsapp"></i> إرسال الطلب عبر واتساب
                     </button>
                 </form>
@@ -644,228 +617,201 @@
         </div>
     </section>
 
-    <!-- Stats Section -->
-    <section class="stats">
-        <div class="container stats-grid">
-            <div class="stat-item">
-                <h4>+50,000</h4>
-                <p>طرد تم توصيله بنجاح</p>
-            </div>
-            <div class="stat-item">
-                <h4>98.5%</h4>
-                <p>نسبة نجاح التسليم</p>
-            </div>
-            <div class="stat-item">
-                <h4>24 ساعة</h4>
-                <p>تحويل مستحقات الدفع عند الاستلام</p>
-            </div>
-            <div class="stat-item">
-                <h4>+500</h4>
-                <p>شريك ومتجر يثق بنا</p>
-            </div>
+    <!-- Features strip -->
+    <section class="features-strip">
+        <div class="container features-grid">
+            <div class="feat-item"><i class="fa-solid fa-bolt"></i> توصيل سريع في الوقت</div>
+            <div class="feat-item"><i class="fa-solid fa-shield-halved"></i> أمان وحماية للطرود</div>
+            <div class="feat-item"><i class="fa-solid fa-heart"></i> حسن المعاملة واللباقة</div>
+            <div class="feat-item"><i class="fa-solid fa-clock"></i> خدمة مرنة على مدار اليوم</div>
         </div>
     </section>
 
-    <!-- Services -->
-    <section class="services" id="services">
+    <!-- Services / Catalog Section -->
+    <section class="catalog">
         <div class="container">
             <div class="section-header">
-                <h2>خدمات متكاملة لنمو تجارتك</h2>
-                <p>نقدم لك حلولاً لوجستية شاملة تضمن رضا عملائك ورفع نسبة تسليم طلبياتك إلى أعلى مستوى.</p>
+                <h2>كتالوج خدمات التوصيل 🛒</h2>
+                <p>جميع طلبياتك واحتياجاتك في مكان واحد، مهما كان طلبك نوصله لك بسرعة وأمان</p>
             </div>
 
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon"><i class="fa-solid fa-hand-holding-dollar"></i></div>
-                    <h3>الدفع عند الاستلام (COD)</h3>
-                    <p>نحصل أموال طرودك من الزبائن بكل أمان ونقوم بتحويلها مباشرة إلى حسابك البنكي بانتظام ودون تأخير.</p>
+            <div class="catalog-grid">
+                <!-- 1 -->
+                <div class="catalog-item">
+                    <div>
+                        <div class="cat-icon-title">
+                            <div class="cat-icon"><i class="fa-solid fa-gift"></i></div>
+                            <h3>الهدايا والمناسبات</h3>
+                        </div>
+                        <p>توصيل الهدايا، المفاجآت، التغليفات والورود مع الحفاظ التام على أناقة وسرية المفاجأة.</p>
+                    </div>
+                    <span class="cat-tag"><i class="fa-solid fa-check"></i> تغليف - مفاجآت - ورود</span>
                 </div>
 
-                <div class="service-card">
-                    <div class="service-icon"><i class="fa-solid fa-truck-ramp-box"></i></div>
-                    <h3>توصيل فوري وباب لباب</h3>
-                    <p>نستلم الشحنات من باب متجرك أو منزلك ونسلمها مباشرة إلى باب زبونك مع خيارات التوصيل في نفس اليوم.</p>
+                <!-- 2 -->
+                <div class="catalog-item">
+                    <div>
+                        <div class="cat-icon-title">
+                            <div class="cat-icon"><i class="fa-solid fa-utensils"></i></div>
+                            <h3>المطاعم والوجبات</h3>
+                        </div>
+                        <p>توصيل وجباتكم المفضلة من جميع مطاعم طنجة (وجبات سريعة، بيتزا، مشاوي، وحلويات) وهي ساخنة وطازجة.</p>
+                    </div>
+                    <span class="cat-tag"><i class="fa-solid fa-check"></i> توصيل فوري وسريع</span>
                 </div>
 
-                <div class="service-card">
-                    <div class="service-icon"><i class="fa-solid fa-headset"></i></div>
-                    <h3>تأكيد الطلبات والمتابعة</h3>
-                    <p>فريقنا يتصل بالعميل لتأكيد الحضور والعنوان، مما يقلل نسبة الإلغاء ويوفر عليك الوقت والمصاريف.</p>
+                <!-- 3 -->
+                <div class="catalog-item">
+                    <div>
+                        <div class="cat-icon-title">
+                            <div class="cat-icon"><i class="fa-solid fa-cart-shopping"></i></div>
+                            <h3>المواد الغذائية والسوبرماركت</h3>
+                        </div>
+                        <p>قضاء مستلزمات المطبخ، الخضر والفواكه، والمواد الأساسية من السوبرماركت مباشرة إلى منزلك.</p>
+                    </div>
+                    <span class="cat-tag"><i class="fa-solid fa-check"></i> تسوق مريح لباب دارك</span>
                 </div>
 
-                <div class="service-card">
-                    <div class="service-icon"><i class="fa-solid fa-arrows-rotate"></i></div>
-                    <h3>إدارة المرتجعات السلسة</h3>
-                    <p>في حال عدم استلام العميل للطلب، نقوم بإرجاع طردك إليك بحالة ممتازة وبشكل سريع وواضح.</p>
+                <!-- 4 -->
+                <div class="catalog-item">
+                    <div>
+                        <div class="cat-icon-title">
+                            <div class="cat-icon"><i class="fa-solid fa-pills"></i></div>
+                            <h3>الأدوية والصيدلية</h3>
+                        </div>
+                        <p>جلب الأدوية والمستلزمات الطبية المستعجلة من الصيدليات والحراسة بكل دقة وعناية.</p>
+                    </div>
+                    <span class="cat-tag"><i class="fa-solid fa-check"></i> خدمة سريعة وموثوقة</span>
                 </div>
 
-                <div class="service-card">
-                    <div class="service-icon"><i class="fa-solid fa-warehouse"></i></div>
-                    <h3>التخزين والتغليف</h3>
-                    <p>نوفر مساحات تخزين آمنة لبضائعك مع تغليف احترافي يضمن حماية المنتجات حتى وصولها للعميل.</p>
+                <!-- 5 -->
+                <div class="catalog-item">
+                    <div>
+                        <div class="cat-icon-title">
+                            <div class="cat-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
+                            <h3>الإلكترونيات والأجهزة</h3>
+                        </div>
+                        <p>شحن الهواتف، الإكسسوارات، والقطع الإلكترونية بحرص شديد وضمان وصولها سليمة 100%.</p>
+                    </div>
+                    <span class="cat-tag"><i class="fa-solid fa-check"></i> حماية تامة للأجهزة</span>
                 </div>
 
-                <div class="service-card">
-                    <div class="service-icon"><i class="fa-solid fa-shield-halved"></i></div>
-                    <h3>ضمان وسلامة الطرود</h3>
-                    <p>نتعامل مع منتجاتك كأنها منتجاتنا؛ ضمان كامل لسلامة الطرود الحساسة والقابلة للكسر.</p>
+                <!-- 6 -->
+                <div class="catalog-item">
+                    <div>
+                        <div class="cat-icon-title">
+                            <div class="cat-icon"><i class="fa-solid fa-shirt"></i></div>
+                            <h3>الملابس والأحذية</h3>
+                        </div>
+                        <p>توصيل مشتريات الأزياء والموضة (رجالية، نسائية، أطفال) وتوصيل طلبيات المتاجر لزبنائهم.</p>
+                    </div>
+                    <span class="cat-tag"><i class="fa-solid fa-check"></i> لخدمة المتاجر والأفراد</span>
+                </div>
+
+                <!-- 7 -->
+                <div class="catalog-item">
+                    <div>
+                        <div class="cat-icon-title">
+                            <div class="cat-icon"><i class="fa-solid fa-spa"></i></div>
+                            <h3>مستحضرات التجميل</h3>
+                        </div>
+                        <p>العناية بالبشرة، العطور، ومنتجات التجميل لجميع الأحياء في طنجة بحذر واحترافية.</p>
+                    </div>
+                    <span class="cat-tag"><i class="fa-solid fa-check"></i> عناية خاصة بالمنتجات</span>
+                </div>
+
+                <!-- 8 -->
+                <div class="catalog-item">
+                    <div>
+                        <div class="cat-icon-title">
+                            <div class="cat-icon"><i class="fa-solid fa-file-contract"></i></div>
+                            <h3>الوثائق والمراسلات</h3>
+                        </div>
+                        <p>نقل الأوراق الهامة، العقود، والطرود الورقية وخدمات الطباعة بسرعة وأمان وسرية تامة.</p>
+                    </div>
+                    <span class="cat-tag"><i class="fa-solid fa-check"></i> سرية وأمان تام</span>
+                </div>
+
+                <!-- 9 -->
+                <div class="catalog-item">
+                    <div>
+                        <div class="cat-icon-title">
+                            <div class="cat-icon"><i class="fa-solid fa-paw"></i></div>
+                            <h3>مستلزمات الحيوانات والمنزل</h3>
+                        </div>
+                        <p>أغذية الحيوانات الأليفة، أدوات التنظيف ومستلزمات البيت المتنوعة.</p>
+                    </div>
+                    <span class="cat-tag"><i class="fa-solid fa-check"></i> وغيرها الكثير...</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- How it works -->
-    <section class="how-it-works" id="how-it-works">
-        <div class="container">
-            <div class="section-header">
-                <h2>كيف تبدأ معنا في 3 خطوات؟</h2>
-                <p>بساطة وسرعة في إجراءات التسليم دون تعقيد أو عقود طويلة الأمد.</p>
+    <!-- Tanger Coverage Highlight -->
+    <div class="container">
+        <div class="coverage-box">
+            <h2>التغطية في جميع أنحاء طنجة 📍🇲🇦</h2>
+            <p>أينما كنت في عروس الشمال طنجة، دراجات ومندوبو Ibra Delivery على أهبة الاستعداد لإيصال طلبك بكل سرعة وأمان:</p>
+            
+            <div class="neighborhoods">
+                <span class="neighborhood-tag">مالاباطا (Malabata)</span>
+                <span class="neighborhood-tag">وسط المدينة (Centre Ville)</span>
+                <span class="neighborhood-tag">النجمة (Iberia / Nejma)</span>
+                <span class="neighborhood-tag">طنجة البالية (Tanger Balia)</span>
+                <span class="neighborhood-tag">مسنانة (Mesnana)</span>
+                <span class="neighborhood-tag">بوبانة (Boubana)</span>
+                <span class="neighborhood-tag">المحساني (Mouhsani)</span>
+                <span class="neighborhood-tag">العوامة والمجد</span>
+                <span class="neighborhood-tag">بني مكادة</span>
+                <span class="neighborhood-tag">طريق الرباط وأشقار</span>
             </div>
 
-            <div class="steps-grid">
-                <div class="step-card">
-                    <div class="step-number">1</div>
-                    <h3>سجّل طلبك</h3>
-                    <p>تواصل معنا عبر الواتساب أو النموذج وقدّم لنا تفاصيل الطرد وعنوان المستلم.</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-number">2</div>
-                    <h3>نستلم ونوصّل</h3>
-                    <p>يأتي المندوب لاستلام بضاعتك وننطلق لتسليمها لزبونك في أسرع وقت مع التأكيد المسبق.</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-number">3</div>
-                    <h3>استلم أرباحك</h3>
-                    <p>نحول لك أموالك المحصلة إلى حسابك فور إتمام التوصيل بكل دقة وشفافية.</p>
-                </div>
+            <div class="contact-strip">
+                <a href="https://wa.me/message/ZVMJZFONM6AHO1" target="_blank" class="btn btn-whatsapp" style="font-size: 1.1rem; padding: 14px 28px;">
+                    <i class="fa-brands fa-whatsapp"></i> اطلب الآن عبر الواتساب
+                </a>
+                <a href="tel:0689784021" class="btn btn-phone" style="font-size: 1.1rem; padding: 14px 28px;">
+                    <i class="fa-solid fa-phone"></i> اتصل بـ 0689784021
+                </a>
             </div>
-        </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="faq" id="faq">
-        <div class="container" style="max-width: 800px;">
-            <div class="section-header">
-                <h2>الأسئلة الأكثر تداولاً</h2>
-                <p>إليك أهم الإجابات عن الاستفسارات التي يطرحها عملاؤنا</p>
-            </div>
-
-            <div class="faq-item">
-                <button class="faq-question">
-                    كم يستغرق توصيل الطرد للزبون؟
-                    <i class="fa-solid fa-chevron-down"></i>
-                </button>
-                <div class="faq-answer">
-                    يتم التوصيل داخل نفس المدينة خلال نفس اليوم أو 24 ساعة كحد أقصى، وبالنسبة للمدن المجاورة من 24 إلى 48 ساعة.
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <button class="faq-question">
-                    متى وكيف أستلم أموال الدفع عند الاستلام (COD)؟
-                    <i class="fa-solid fa-chevron-down"></i>
-                </button>
-                <div class="faq-answer">
-                    نقوم بإرسال الأموال مباشرة عبر تحويل بنكي إلى حسابك (أو نقداً) كل 24 إلى 48 ساعة بمجرد تسليم الطرود.
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <button class="faq-question">
-                    ماذا يحدث في حال رفض الزبون استلام الشحنة؟
-                    <i class="fa-solid fa-chevron-down"></i>
-                </button>
-                <div class="faq-answer">
-                    نقوم بإجراء محاولتين أو ثلاث للتواصل مع العميل لتفادي الإرجاع. وإذا تأكد الرفض، نعيد الطرد إليك بأمان مع تقرير يوضح السبب.
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <div class="container" id="contact">
-        <div class="cta-banner">
-            <h2>مستعد لتطوير خدمات التوصيل في متجرك؟</h2>
-            <p>انضم اليوم إلى مئات التجار الذين يعتمدون على Ibra Delivery لرفع أرباحهم وتطوير أعمالهم.</p>
-            <a href="https://wa.me/212600000000?text=أريد%20الاشتراك%20في%20خدمات%20التوصيل" target="_blank" class="btn btn-whatsapp" style="font-size: 1.1rem; padding: 14px 30px;">
-                <i class="fa-brands fa-whatsapp"></i> تواصل معنا فوراً على واتساب
-            </a>
         </div>
     </div>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <h3>IBRA DELIVERY</h3>
-                    <p>شريكك اللوجستي المفضل لتسليم الطرود وحلول التجارة الإلكترونية، سرعة، أمانة، والتزام بالمواعيد.</p>
-                </div>
-                <div class="footer-links">
-                    <h4>روابط سريعة</h4>
-                    <ul>
-                        <li><a href="#services">الخدمات</a></li>
-                        <li><a href="#how-it-works">كيف نعمل</a></li>
-                        <li><a href="#faq">الأسئلة الشائعة</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
-                    <h4>معلومات الاتصال</h4>
-                    <ul>
-                        <li><i class="fa-solid fa-phone"></i> +212 600-000000</li>
-                        <li><i class="fa-solid fa-envelope"></i> contact@ibradelivery.com</li>
-                        <li><i class="fa-solid fa-location-dot"></i> طنجة، المغرب</li>
-                    </ul>
-                </div>
+            <h3 style="color: var(--white); font-size: 1.5rem; margin-bottom: 8px;">IBRA DELIVERY TANGER</h3>
+            <p>خدمتك توصل… وراحتك تهمنا! 💙 التوصيل السريع والآمن في طنجة</p>
+            
+            <div class="footer-socials">
+                <a href="https://wa.me/message/ZVMJZFONM6AHO1" target="_blank" title="واتساب"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="https://www.instagram.com/ibra_delivery_tanger?xtok=MXZybm5kcDNpZHZ1ZA==" target="_blank" title="إنستغرام"><i class="fa-brands fa-instagram"></i></a>
+                <a href="tel:0689784021" title="اتصال مباشر"><i class="fa-solid fa-phone"></i></a>
             </div>
-            <div class="footer-bottom">
-                <p>جميع الحقوق محفوظة &copy; 2026 Ibra Delivery.</p>
-            </div>
+
+            <p style="font-size: 0.8rem; color: #64748b;">
+                جميع الحقوق محفوظة &copy; IBRA DELIVERY TANGER - طنجة
+            </p>
         </div>
     </footer>
 
     <!-- Floating WhatsApp -->
-    <a href="https://wa.me/212600000000?text=مرحباً،%20أود%20الاستفسار%20عن%20التوصيل" class="floating-wa" target="_blank" title="تواصل معنا عبر واتساب">
+    <a href="https://wa.me/message/ZVMJZFONM6AHO1" class="floating-wa" target="_blank" title="تواصل معنا فوراً على واتساب">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
-    <!-- Interactive Script -->
+    <!-- Form Script -->
     <script>
-        // FAQ Accordion Toggle
-        const faqQuestions = document.querySelectorAll('.faq-question');
-        faqQuestions.forEach(question => {
-            question.addEventListener('click', () => {
-                const item = question.parentElement;
-                const answer = question.nextElementSibling;
-                const isActive = item.classList.contains('active');
-
-                // Close other open answers
-                document.querySelectorAll('.faq-item').forEach(i => {
-                    i.classList.remove('active');
-                    i.querySelector('.faq-answer').style.maxHeight = null;
-                });
-
-                if (!isActive) {
-                    item.classList.add('active');
-                    answer.style.maxHeight = answer.scrollHeight + "px";
-                }
-            });
-        });
-
-        // Form Submit to WhatsApp
-        document.getElementById('deliveryForm').addEventListener('submit', function(e) {
+        document.getElementById('tangerForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            const name = document.getElementById('clientName').value;
-            const phone = document.getElementById('clientPhone').value;
-            const city = document.getElementById('clientCity').value;
-            const count = document.getElementById('parcelCount').value;
+            const name = document.getElementById('custName').value;
+            const area = document.getElementById('custArea').value;
+            const orderType = document.getElementById('custOrderType').value;
+            const notes = document.getElementById('custNotes').value || 'لا توجد ملاحظات إضافية';
 
-            // Replace with your real WhatsApp number (with country code, e.g., 212XXXXXXXXX)
-            const myWhatsappNumber = "212600000000"; 
+            const message = `السلام عليكم IBRA DELIVERY TANGER 🛵💙%0Aأرغب في حجز خدمة التوصيل في طنجة:%0A- *الاسم:* ${encodeURIComponent(name)}%0A- *المنطقة/العنوان بطنجة:* ${encodeURIComponent(area)}%0A- *نوع الطلبية:* ${encodeURIComponent(orderType)}%0A- *ملاحظات:* ${encodeURIComponent(notes)}`;
 
-            const message = `السلام عليكم ورحمة الله،%0Aأرغب في حجز خدمة التوصيل مع *Ibra Delivery*:%0A- *الاسم/المتجر:* ${encodeURIComponent(name)}%0A- *رقم الهاتف:* ${encodeURIComponent(phone)}%0A- *المدينة:* ${encodeURIComponent(city)}%0A- *عدد الطرود:* ${encodeURIComponent(count)}`;
-
-            window.open(`https://wa.me/${myWhatsappNumber}?text=${message}`, '_blank');
+            window.open(`https://wa.me/message/ZVMJZFONM6AHO1?text=${message}`, '_blank');
         });
     </script>
 </body>
