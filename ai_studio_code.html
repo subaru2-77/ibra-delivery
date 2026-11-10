@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ibra Delivery | شريكك الموثوق للتوصيل السريع وخدمات الدفع عند الاستلام</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #10b981;
+            --accent: #f59e0b;
+            --dark: #0f172a;
+            --gray-light: #f8fafc;
+            --gray-border: #e2e8f0;
+            --text-main: #334155;
+            --white: #ffffff;
+            --shadow-sm: 0 4px 6px -1px rgba(0,0,0,0.05);
+            --shadow-lg: 0 20px 25px -5px rgba(0,0,0,0.08), 0 8px 10px -6px rgba(0,0,0,0.05);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--gray-light);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navbar */
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--gray-border);
+            padding: 15px 0;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 900;
+            color: var(--dark);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 24px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.3);
+        }
+
+        .btn-whatsapp {
+            background-color: #22c55e;
+            color: var(--white);
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #16a34a;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0 60px;
+            background: radial-gradient(circle at top right, #e0e7ff 0%, #f8fafc 60%);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .badge-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #dbeafe;
+            color: var(--primary);
+            padding: 6px 14px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .hero-title {
+            font-size: 2.8rem;
+            font-weight: 900;
+            color: var(--dark);
+            line-height: 1.25;
+            margin-bottom: 20px;
+        }
+
+        .hero-title span {
+            color: var(--primary);
+        }
+
+        .hero-desc {
+            font-size: 1.15rem;
+            color: #64748b;
+            margin-bottom: 30px;
+        }
+
+        .hero-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 35px;
+        }
+
+        .hero-feature-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .hero-feature-item i {
+            color: var(--secondary);
+        }
+
+        /* Quick Order Card */
+        .order-card {
+            background: var(--white);
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--gray-border);
+        }
+
+        .order-card h3 {
+            font-size: 1.4rem;
+            color: var(--dark);
+            margin-bottom: 8px;
+        }
+
+        .order-card p {
+            color: #64748b;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+            color: var(--dark);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 14px;
+            border-radius: 8px;
+            border: 1.5px solid var(--gray-border);
+            font-size: 0.95rem;
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+        }
+
+        /* Stats */
+        .stats {
+            background: var(--white);
+            padding: 40px 0;
+            border-top: 1px solid var(--gray-border);
+            border-bottom: 1px solid var(--gray-border);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            text-align: center;
+        }
+
+        .stat-item h4 {
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .stat-item p {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #64748b;
+        }
+
+        /* Services */
+        .services {
+            padding: 80px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 650px;
+            margin: 0 auto 50px;
+        }
+
+        .section-header h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 12px;
+        }
+
+        .section-header p {
+            color: #64748b;
+            font-size: 1.05rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 16px;
+            border: 1px solid var(--gray-border);
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+            border-color: #cbd5e1;
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: #eff6ff;
+            color: var(--primary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 1.25rem;
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+
+        .service-card p {
+            font-size: 0.95rem;
+            color: #64748b;
+        }
+
+        /* How it works */
+        .how-it-works {
+            background: var(--white);
+            padding: 80px 0;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            position: relative;
+        }
+
+        .step-card {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .step-number {
+            width: 48px;
+            height: 48px;
+            background: var(--primary);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            font-weight: 800;
+            margin: 0 auto 20px;
+            box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
+        }
+
+        .step-card h3 {
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+
+        .step-card p {
+            color: #64748b;
+            font-size: 0.95rem;
+        }
+
+        /* FAQ */
+        .faq {
+            padding: 80px 0;
+        }
+
+        .faq-item {
+            background: var(--white);
+            border-radius: 12px;
+            border: 1px solid var(--gray-border);
+            margin-bottom: 15px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 20px;
+            text-align: right;
+            background: none;
+            border: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--dark);
+            cursor: pointer;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            padding: 0 20px;
+            color: #64748b;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .faq-item.active .faq-answer {
+            padding-bottom: 20px;
+        }
+
+        .faq-item.active i {
+            transform: rotate(180deg);
+        }
+
+        /* CTA Banner */
+        .cta-banner {
+            background: linear-gradient(135deg, var(--primary) 0%, #1e40af 100%);
+            color: var(--white);
+            padding: 60px 0;
+            text-align: center;
+            border-radius: 24px;
+            margin: 40px auto;
+        }
+
+        .cta-banner h2 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+        }
+
+        .cta-banner p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark);
+            color: #94a3b8;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h3 {
+            color: var(--white);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .footer-links h4 {
+            color: var(--white);
+            margin-bottom: 15px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #1e293b;
+            padding-top: 20px;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        /* Floating WhatsApp Button */
+        .floating-wa {
+            position: fixed;
+            bottom: 25px;
+            left: 25px;
+            width: 60px;
+            height: 60px;
+            background-color: #25d366;
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.4);
+            z-index: 9999;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .floating-wa:hover {
+            transform: scale(1.1);
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero-grid, .services-grid, .steps-grid, .stats-grid, .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-title {
+                font-size: 2.2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .order-card {
+                margin-top: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sticky Navigation -->
+    <nav class="navbar">
+        <div class="container nav-content">
+            <a href="#" class="logo">
+                <i class="fa-solid fa-truck-fast"></i> IBRA <span>DELIVERY</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#services">خدماتنا</a></li>
+                <li><a href="#how-it-works">كيف نعمل</a></li>
+                <li><a href="#faq">الأسئلة الشائعة</a></li>
+                <li><a href="#contact">تواصل معنا</a></li>
+            </ul>
+            <a href="https://wa.me/212600000000?text=السلام%20عليكم،%20أريد%20معلومات%20عن%20خدمة%20التوصيل" target="_blank" class="btn btn-whatsapp">
+                <i class="fa-brands fa-whatsapp"></i> تواصل واتساب
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-grid">
+            <div>
+                <span class="badge-pill">
+                    <i class="fa-solid fa-bolt"></i> تسليم سريع، دقيق وموثوق
+                </span>
+                <h1 class="hero-title">
+                    وصّل طرودك لزبنائك <span>بكل ثقة وسرعة</span>
+                </h1>
+                <p class="hero-desc">
+                    خدمة توصيل احترافية للمتاجر الإلكترونية والأفراد مع تحصيل الأموال عند الاستلام (COD) وتحويلها في أقل من 24 ساعة.
+                </p>
+
+                <div class="hero-features">
+                    <div class="hero-feature-item">
+                        <i class="fa-solid fa-circle-check"></i> توصيل خلال 24 - 48 ساعة
+                    </div>
+                    <div class="hero-feature-item">
+                        <i class="fa-solid fa-circle-check"></i> إدارة المرتجعات باحترافية
+                    </div>
+                    <div class="hero-feature-item">
+                        <i class="fa-solid fa-circle-check"></i> تأكيد العناوين هاتفياً
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                    <a href="#order-form" class="btn btn-primary">
+                        <i class="fa-solid fa-paper-plane"></i> احجز شحنتك الآن
+                    </a>
+                    <a href="tel:+212600000000" class="btn" style="background:#e2e8f0; color:var(--dark);">
+                        <i class="fa-solid fa-phone"></i> اتصل بنا
+                    </a>
+                </div>
+            </div>
+
+            <!-- Quick Booking Card -->
+            <div class="order-card" id="order-form">
+                <h3>طلب توصيل سريع 📦</h3>
+                <p>املأ البيانات وسيتم التواصل معك خلال دقائق لتأكيد الاستلام</p>
+
+                <form id="deliveryForm">
+                    <div class="form-group">
+                        <label>الاسم الكامل أو اسم المتجر</label>
+                        <input type="text" id="clientName" class="form-control" placeholder="مثال: متجر الأناقة" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>رقم الهاتف / الواتساب</label>
+                        <input type="tel" id="clientPhone" class="form-control" placeholder="مثال: 0612345678" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>مدينة التوصيل</label>
+                        <select id="clientCity" class="form-control" required>
+                            <option value="">اختر المدينة...</option>
+                            <option value="طنجة والنواحي">طنجة والنواحي</option>
+                            <option value="الدار البيضاء">الدار البيضاء</option>
+                            <option value="الرباط / سلا">الرباط / سلا</option>
+                            <option value="مراكش">مراكش</option>
+                            <option value="فاس ومكناس">فاس ومكناس</option>
+                            <option value="مدينة أخرى">مدينة أخرى (سائر المدن)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>عدد الطرود المتوقعة</label>
+                        <input type="number" id="parcelCount" class="form-control" placeholder="مثال: 5" min="1" required>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 10px;">
+                        <i class="fa-brands fa-whatsapp"></i> إرسال الطلب عبر واتساب
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container stats-grid">
+            <div class="stat-item">
+                <h4>+50,000</h4>
+                <p>طرد تم توصيله بنجاح</p>
+            </div>
+            <div class="stat-item">
+                <h4>98.5%</h4>
+                <p>نسبة نجاح التسليم</p>
+            </div>
+            <div class="stat-item">
+                <h4>24 ساعة</h4>
+                <p>تحويل مستحقات الدفع عند الاستلام</p>
+            </div>
+            <div class="stat-item">
+                <h4>+500</h4>
+                <p>شريك ومتجر يثق بنا</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>خدمات متكاملة لنمو تجارتك</h2>
+                <p>نقدم لك حلولاً لوجستية شاملة تضمن رضا عملائك ورفع نسبة تسليم طلبياتك إلى أعلى مستوى.</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-hand-holding-dollar"></i></div>
+                    <h3>الدفع عند الاستلام (COD)</h3>
+                    <p>نحصل أموال طرودك من الزبائن بكل أمان ونقوم بتحويلها مباشرة إلى حسابك البنكي بانتظام ودون تأخير.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-truck-ramp-box"></i></div>
+                    <h3>توصيل فوري وباب لباب</h3>
+                    <p>نستلم الشحنات من باب متجرك أو منزلك ونسلمها مباشرة إلى باب زبونك مع خيارات التوصيل في نفس اليوم.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-headset"></i></div>
+                    <h3>تأكيد الطلبات والمتابعة</h3>
+                    <p>فريقنا يتصل بالعميل لتأكيد الحضور والعنوان، مما يقلل نسبة الإلغاء ويوفر عليك الوقت والمصاريف.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-arrows-rotate"></i></div>
+                    <h3>إدارة المرتجعات السلسة</h3>
+                    <p>في حال عدم استلام العميل للطلب، نقوم بإرجاع طردك إليك بحالة ممتازة وبشكل سريع وواضح.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-warehouse"></i></div>
+                    <h3>التخزين والتغليف</h3>
+                    <p>نوفر مساحات تخزين آمنة لبضائعك مع تغليف احترافي يضمن حماية المنتجات حتى وصولها للعميل.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h3>ضمان وسلامة الطرود</h3>
+                    <p>نتعامل مع منتجاتك كأنها منتجاتنا؛ ضمان كامل لسلامة الطرود الحساسة والقابلة للكسر.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2>كيف تبدأ معنا في 3 خطوات؟</h2>
+                <p>بساطة وسرعة في إجراءات التسليم دون تعقيد أو عقود طويلة الأمد.</p>
+            </div>
+
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>سجّل طلبك</h3>
+                    <p>تواصل معنا عبر الواتساب أو النموذج وقدّم لنا تفاصيل الطرد وعنوان المستلم.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>نستلم ونوصّل</h3>
+                    <p>يأتي المندوب لاستلام بضاعتك وننطلق لتسليمها لزبونك في أسرع وقت مع التأكيد المسبق.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>استلم أرباحك</h3>
+                    <p>نحول لك أموالك المحصلة إلى حسابك فور إتمام التوصيل بكل دقة وشفافية.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" id="faq">
+        <div class="container" style="max-width: 800px;">
+            <div class="section-header">
+                <h2>الأسئلة الأكثر تداولاً</h2>
+                <p>إليك أهم الإجابات عن الاستفسارات التي يطرحها عملاؤنا</p>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    كم يستغرق توصيل الطرد للزبون؟
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    يتم التوصيل داخل نفس المدينة خلال نفس اليوم أو 24 ساعة كحد أقصى، وبالنسبة للمدن المجاورة من 24 إلى 48 ساعة.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    متى وكيف أستلم أموال الدفع عند الاستلام (COD)؟
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    نقوم بإرسال الأموال مباشرة عبر تحويل بنكي إلى حسابك (أو نقداً) كل 24 إلى 48 ساعة بمجرد تسليم الطرود.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    ماذا يحدث في حال رفض الزبون استلام الشحنة؟
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    نقوم بإجراء محاولتين أو ثلاث للتواصل مع العميل لتفادي الإرجاع. وإذا تأكد الرفض، نعيد الطرد إليك بأمان مع تقرير يوضح السبب.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <div class="container" id="contact">
+        <div class="cta-banner">
+            <h2>مستعد لتطوير خدمات التوصيل في متجرك؟</h2>
+            <p>انضم اليوم إلى مئات التجار الذين يعتمدون على Ibra Delivery لرفع أرباحهم وتطوير أعمالهم.</p>
+            <a href="https://wa.me/212600000000?text=أريد%20الاشتراك%20في%20خدمات%20التوصيل" target="_blank" class="btn btn-whatsapp" style="font-size: 1.1rem; padding: 14px 30px;">
+                <i class="fa-brands fa-whatsapp"></i> تواصل معنا فوراً على واتساب
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>IBRA DELIVERY</h3>
+                    <p>شريكك اللوجستي المفضل لتسليم الطرود وحلول التجارة الإلكترونية، سرعة، أمانة، والتزام بالمواعيد.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>روابط سريعة</h4>
+                    <ul>
+                        <li><a href="#services">الخدمات</a></li>
+                        <li><a href="#how-it-works">كيف نعمل</a></li>
+                        <li><a href="#faq">الأسئلة الشائعة</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>معلومات الاتصال</h4>
+                    <ul>
+                        <li><i class="fa-solid fa-phone"></i> +212 600-000000</li>
+                        <li><i class="fa-solid fa-envelope"></i> contact@ibradelivery.com</li>
+                        <li><i class="fa-solid fa-location-dot"></i> طنجة، المغرب</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>جميع الحقوق محفوظة &copy; 2026 Ibra Delivery.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/212600000000?text=مرحباً،%20أود%20الاستفسار%20عن%20التوصيل" class="floating-wa" target="_blank" title="تواصل معنا عبر واتساب">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Interactive Script -->
+    <script>
+        // FAQ Accordion Toggle
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                const answer = question.nextElementSibling;
+                const isActive = item.classList.contains('active');
+
+                // Close other open answers
+                document.querySelectorAll('.faq-item').forEach(i => {
+                    i.classList.remove('active');
+                    i.querySelector('.faq-answer').style.maxHeight = null;
+                });
+
+                if (!isActive) {
+                    item.classList.add('active');
+                    answer.style.maxHeight = answer.scrollHeight + "px";
+                }
+            });
+        });
+
+        // Form Submit to WhatsApp
+        document.getElementById('deliveryForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('clientName').value;
+            const phone = document.getElementById('clientPhone').value;
+            const city = document.getElementById('clientCity').value;
+            const count = document.getElementById('parcelCount').value;
+
+            // Replace with your real WhatsApp number (with country code, e.g., 212XXXXXXXXX)
+            const myWhatsappNumber = "212600000000"; 
+
+            const message = `السلام عليكم ورحمة الله،%0Aأرغب في حجز خدمة التوصيل مع *Ibra Delivery*:%0A- *الاسم/المتجر:* ${encodeURIComponent(name)}%0A- *رقم الهاتف:* ${encodeURIComponent(phone)}%0A- *المدينة:* ${encodeURIComponent(city)}%0A- *عدد الطرود:* ${encodeURIComponent(count)}`;
+
+            window.open(`https://wa.me/${myWhatsappNumber}?text=${message}`, '_blank');
+        });
+    </script>
+</body>
+</html>
