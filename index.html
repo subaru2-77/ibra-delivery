@@ -325,15 +325,15 @@
 
         .catalog-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 22px;
         }
 
         .catalog-item {
             background: var(--dark-card);
             border: 1px solid #1e293b;
             border-radius: 16px;
-            padding: 24px;
+            padding: 22px;
             transition: var(--transition);
             display: flex;
             flex-direction: column;
@@ -364,10 +364,11 @@
             align-items: center;
             justify-content: center;
             font-size: 1.3rem;
+            flex-shrink: 0;
         }
 
         .catalog-item h3 {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             color: var(--white);
         }
 
@@ -378,6 +379,13 @@
             margin-bottom: 15px;
         }
 
+        .cat-bottom {
+            margin-top: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
         .cat-tag {
             font-size: 0.8rem;
             color: var(--primary-neon);
@@ -385,6 +393,30 @@
             display: inline-flex;
             align-items: center;
             gap: 5px;
+        }
+
+        .btn-cat-order {
+            width: 100%;
+            background: rgba(37, 211, 102, 0.15);
+            border: 1px solid rgba(37, 211, 102, 0.4);
+            color: var(--accent-green);
+            padding: 9px 14px;
+            font-size: 0.88rem;
+            font-weight: 700;
+            border-radius: 10px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn-cat-order:hover {
+            background: var(--accent-green);
+            color: var(--white);
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            transform: translateY(-2px);
         }
 
         /* Coverage banner Tanger */
@@ -526,7 +558,6 @@
     <nav class="navbar">
         <div class="container nav-content">
             <a href="#" class="brand-logo">
-                <!-- If you upload logo.png to github repository, it appears here automatically -->
                 <img src="logo.png" alt="Logo" class="logo-img" onerror="this.style.display='none'; document.getElementById('fallback-icon').style.display='inline-block';">
                 <i id="fallback-icon" class="fa-solid fa-motorcycle" style="display:none;"></i>
                 <div class="brand-title">IBRA <span>DELIVERY</span> TANGER</div>
@@ -535,7 +566,7 @@
                 <a href="https://www.instagram.com/ibra_delivery_tanger?xtok=MXZybm5kcDNpZHZ1ZA==" target="_blank" class="btn btn-instagram" title="إنستغرام">
                     <i class="fa-brands fa-instagram"></i> <span>Instagram</span>
                 </a>
-                <a href="https://wa.me/message/ZVMJZFONM6AHO1" target="_blank" class="btn btn-whatsapp" title="واتساب">
+                <a href="javascript:void(0)" onclick="openWhatsAppChat('مرحبا IBRA DELIVERY، أريد الاستفسار عن التوصيل في طنجة 🛵')" class="btn btn-whatsapp" title="واتساب">
                     <i class="fa-brands fa-whatsapp"></i> <span>واتساب</span>
                 </a>
             </div>
@@ -565,7 +596,7 @@
                 </div>
 
                 <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-                    <a href="https://wa.me/message/ZVMJZFONM6AHO1" target="_blank" class="btn btn-whatsapp" style="font-size: 1.05rem; padding: 13px 25px;">
+                    <a href="#tangerForm" class="btn btn-whatsapp" style="font-size: 1.05rem; padding: 13px 25px;">
                         <i class="fa-brands fa-whatsapp"></i> اطلب الآن عبر واتساب
                     </a>
                     <a href="tel:0689784021" class="btn btn-phone" style="font-size: 1.05rem; padding: 13px 25px;">
@@ -599,14 +630,16 @@
                             <option value="أدوية ومستلزمات صيدلية 💊">💊 أدوية ومستلزمات صيدلية</option>
                             <option value="إلكترونيات وهواتف 📱">📱 إلكترونيات وهواتف</option>
                             <option value="ملابس وأحذية 👕">👕 ملابس وأحذية</option>
+                            <option value="مستحضرات تجميل وعطور 💄">💄 مستحضرات تجميل وعطور</option>
                             <option value="وثائق وأوراق إدارية 📄">📄 وثائق وأوراق هامة</option>
+                            <option value="مستلزمات الحيوانات والمنزل 🐾">🐾 مستلزمات الحيوانات والمنزل</option>
                             <option value="طلبية خاصة أخرى 📦">📦 طلبية أو غرض آخر</option>
                         </select>
                     </div>
 
                     <div class="form-group">
-                        <label>تفاصيل إضافية (اختياري)</label>
-                        <input type="text" id="custNotes" class="form-control" placeholder="أي ملاحظة بخصوص التوقيت أو الطلب">
+                        <label>تفاصيل المشتريات / الطلب (اختياري)</label>
+                        <input type="text" id="custNotes" class="form-control" placeholder="مثال: الوجبة المطلوبة، اسم المطعم، أو وقت التوصيل...">
                     </div>
 
                     <button type="submit" class="btn btn-whatsapp" style="width: 100%; margin-top: 8px; padding: 13px;">
@@ -628,11 +661,11 @@
     </section>
 
     <!-- Services / Catalog Section -->
-    <section class="catalog">
+    <section class="catalog" id="menu">
         <div class="container">
             <div class="section-header">
                 <h2>كتالوج خدمات التوصيل 🛒</h2>
-                <p>جميع طلبياتك واحتياجاتك في مكان واحد، مهما كان طلبك نوصله لك بسرعة وأمان</p>
+                <p>اختر ما تريد توصيله واضغط على الزر للإرسال الفوري عبر محادثة واتساب</p>
             </div>
 
             <div class="catalog-grid">
@@ -645,7 +678,12 @@
                         </div>
                         <p>توصيل الهدايا، المفاجآت، التغليفات والورود مع الحفاظ التام على أناقة وسرية المفاجأة.</p>
                     </div>
-                    <span class="cat-tag"><i class="fa-solid fa-check"></i> تغليف - مفاجآت - ورود</span>
+                    <div class="cat-bottom">
+                        <span class="cat-tag"><i class="fa-solid fa-check"></i> تغليف - مفاجآت - ورود</span>
+                        <button type="button" class="btn-cat-order" onclick="orderCatalogItem('هدايا ومفاجآت 🎁')">
+                            <i class="fa-brands fa-whatsapp"></i> اطلب هذه الخدمة الآن
+                        </button>
+                    </div>
                 </div>
 
                 <!-- 2 -->
@@ -657,7 +695,12 @@
                         </div>
                         <p>توصيل وجباتكم المفضلة من جميع مطاعم طنجة (وجبات سريعة، بيتزا، مشاوي، وحلويات) وهي ساخنة وطازجة.</p>
                     </div>
-                    <span class="cat-tag"><i class="fa-solid fa-check"></i> توصيل فوري وسريع</span>
+                    <div class="cat-bottom">
+                        <span class="cat-tag"><i class="fa-solid fa-check"></i> توصيل فوري وسريع</span>
+                        <button type="button" class="btn-cat-order" onclick="orderCatalogItem('وجبات ومطاعم 🍔')">
+                            <i class="fa-brands fa-whatsapp"></i> اطلب وجبتك الآن
+                        </button>
+                    </div>
                 </div>
 
                 <!-- 3 -->
@@ -669,7 +712,12 @@
                         </div>
                         <p>قضاء مستلزمات المطبخ، الخضر والفواكه، والمواد الأساسية من السوبرماركت مباشرة إلى منزلك.</p>
                     </div>
-                    <span class="cat-tag"><i class="fa-solid fa-check"></i> تسوق مريح لباب دارك</span>
+                    <div class="cat-bottom">
+                        <span class="cat-tag"><i class="fa-solid fa-check"></i> تسوق مريح لباب دارك</span>
+                        <button type="button" class="btn-cat-order" onclick="orderCatalogItem('مواد غذائية وتسوق 🛒')">
+                            <i class="fa-brands fa-whatsapp"></i> اطلب التسوق الآن
+                        </button>
+                    </div>
                 </div>
 
                 <!-- 4 -->
@@ -681,7 +729,12 @@
                         </div>
                         <p>جلب الأدوية والمستلزمات الطبية المستعجلة من الصيدليات والحراسة بكل دقة وعناية.</p>
                     </div>
-                    <span class="cat-tag"><i class="fa-solid fa-check"></i> خدمة سريعة وموثوقة</span>
+                    <div class="cat-bottom">
+                        <span class="cat-tag"><i class="fa-solid fa-check"></i> خدمة سريعة وموثوقة</span>
+                        <button type="button" class="btn-cat-order" onclick="orderCatalogItem('أدوية ومستلزمات صيدلية 💊')">
+                            <i class="fa-brands fa-whatsapp"></i> اطلب من الصيدلية
+                        </button>
+                    </div>
                 </div>
 
                 <!-- 5 -->
@@ -693,7 +746,12 @@
                         </div>
                         <p>شحن الهواتف، الإكسسوارات، والقطع الإلكترونية بحرص شديد وضمان وصولها سليمة 100%.</p>
                     </div>
-                    <span class="cat-tag"><i class="fa-solid fa-check"></i> حماية تامة للأجهزة</span>
+                    <div class="cat-bottom">
+                        <span class="cat-tag"><i class="fa-solid fa-check"></i> حماية تامة للأجهزة</span>
+                        <button type="button" class="btn-cat-order" onclick="orderCatalogItem('إلكترونيات وهواتف 📱')">
+                            <i class="fa-brands fa-whatsapp"></i> اطلب توصيل إلكترونيات
+                        </button>
+                    </div>
                 </div>
 
                 <!-- 6 -->
@@ -705,7 +763,12 @@
                         </div>
                         <p>توصيل مشتريات الأزياء والموضة (رجالية، نسائية، أطفال) وتوصيل طلبيات المتاجر لزبنائهم.</p>
                     </div>
-                    <span class="cat-tag"><i class="fa-solid fa-check"></i> لخدمة المتاجر والأفراد</span>
+                    <div class="cat-bottom">
+                        <span class="cat-tag"><i class="fa-solid fa-check"></i> لخدمة المتاجر والأفراد</span>
+                        <button type="button" class="btn-cat-order" onclick="orderCatalogItem('ملابس وأحذية 👕')">
+                            <i class="fa-brands fa-whatsapp"></i> اطلب توصيل الملابس
+                        </button>
+                    </div>
                 </div>
 
                 <!-- 7 -->
@@ -717,7 +780,12 @@
                         </div>
                         <p>العناية بالبشرة، العطور، ومنتجات التجميل لجميع الأحياء في طنجة بحذر واحترافية.</p>
                     </div>
-                    <span class="cat-tag"><i class="fa-solid fa-check"></i> عناية خاصة بالمنتجات</span>
+                    <div class="cat-bottom">
+                        <span class="cat-tag"><i class="fa-solid fa-check"></i> عناية خاصة بالمنتجات</span>
+                        <button type="button" class="btn-cat-order" onclick="orderCatalogItem('مستحضرات تجميل وعطور 💄')">
+                            <i class="fa-brands fa-whatsapp"></i> اطلب التجميل والعطور
+                        </button>
+                    </div>
                 </div>
 
                 <!-- 8 -->
@@ -729,7 +797,12 @@
                         </div>
                         <p>نقل الأوراق الهامة، العقود، والطرود الورقية وخدمات الطباعة بسرعة وأمان وسرية تامة.</p>
                     </div>
-                    <span class="cat-tag"><i class="fa-solid fa-check"></i> سرية وأمان تام</span>
+                    <div class="cat-bottom">
+                        <span class="cat-tag"><i class="fa-solid fa-check"></i> سرية وأمان تام</span>
+                        <button type="button" class="btn-cat-order" onclick="orderCatalogItem('وثائق وأوراق إدارية 📄')">
+                            <i class="fa-brands fa-whatsapp"></i> اطلب توصيل وثائق
+                        </button>
+                    </div>
                 </div>
 
                 <!-- 9 -->
@@ -741,7 +814,12 @@
                         </div>
                         <p>أغذية الحيوانات الأليفة، أدوات التنظيف ومستلزمات البيت المتنوعة.</p>
                     </div>
-                    <span class="cat-tag"><i class="fa-solid fa-check"></i> وغيرها الكثير...</span>
+                    <div class="cat-bottom">
+                        <span class="cat-tag"><i class="fa-solid fa-check"></i> وغيرها الكثير...</span>
+                        <button type="button" class="btn-cat-order" onclick="orderCatalogItem('مستلزمات الحيوانات والمنزل 🐾')">
+                            <i class="fa-brands fa-whatsapp"></i> اطلب هذه الخدمة
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -767,7 +845,7 @@
             </div>
 
             <div class="contact-strip">
-                <a href="https://wa.me/message/ZVMJZFONM6AHO1" target="_blank" class="btn btn-whatsapp" style="font-size: 1.1rem; padding: 14px 28px;">
+                <a href="javascript:void(0)" onclick="openWhatsAppChat('السلام عليكم، بغيت نطلب خدمة التوصيل في طنجة 🛵')" class="btn btn-whatsapp" style="font-size: 1.1rem; padding: 14px 28px;">
                     <i class="fa-brands fa-whatsapp"></i> اطلب الآن عبر الواتساب
                 </a>
                 <a href="tel:0689784021" class="btn btn-phone" style="font-size: 1.1rem; padding: 14px 28px;">
@@ -784,7 +862,7 @@
             <p>خدمتك توصل… وراحتك تهمنا! 💙 التوصيل السريع والآمن في طنجة</p>
             
             <div class="footer-socials">
-                <a href="https://wa.me/message/ZVMJZFONM6AHO1" target="_blank" title="واتساب"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="javascript:void(0)" onclick="openWhatsAppChat('مرحبا IBRA DELIVERY')" title="واتساب"><i class="fa-brands fa-whatsapp"></i></a>
                 <a href="https://www.instagram.com/ibra_delivery_tanger?xtok=MXZybm5kcDNpZHZ1ZA==" target="_blank" title="إنستغرام"><i class="fa-brands fa-instagram"></i></a>
                 <a href="tel:0689784021" title="اتصال مباشر"><i class="fa-solid fa-phone"></i></a>
             </div>
@@ -796,22 +874,62 @@
     </footer>
 
     <!-- Floating WhatsApp -->
-    <a href="https://wa.me/message/ZVMJZFONM6AHO1" class="floating-wa" target="_blank" title="تواصل معنا فوراً على واتساب">
+    <a href="javascript:void(0)" onclick="openWhatsAppChat('السلام عليكم IBRA DELIVERY، أريد طلب توصيل في طنجة 🛵')" class="floating-wa" title="تواصل معنا فوراً على واتساب">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
-    <!-- Form Script -->
+    <!-- Order & WhatsApp Script -->
     <script>
+        // WhatsApp Business Moroccan Number (+212689784021)
+        const WHATSAPP_PHONE = "212689784021";
+
+        // Helper function to send custom text directly into WhatsApp chat
+        function openWhatsAppChat(customText) {
+            const encodedText = encodeURIComponent(customText);
+            const waUrl = `https://wa.me/${WHATSAPP_PHONE}?text=${encodedText}`;
+            window.open(waUrl, '_blank');
+        }
+
+        // When a user clicks "Order this" on any catalog item card
+        function orderCatalogItem(serviceName) {
+            // Also select it in the form dropdown and focus
+            const selectElement = document.getElementById('custOrderType');
+            if (selectElement) {
+                for (let option of selectElement.options) {
+                    if (option.value.includes(serviceName) || serviceName.includes(option.value)) {
+                        selectElement.value = option.value;
+                        break;
+                    }
+                }
+            }
+
+            const message = 
+`السلام عليكم IBRA DELIVERY TANGER 🛵💙
+أريد حجز طلب توصيل من القائمة:
+- الخدمة المطلوبة: *${serviceName}*
+- المدينة: طنجة
+من فضلك التفاصيل وطريقة المتابعة.`;
+
+            openWhatsAppChat(message);
+        }
+
+        // When a user fills out the main booking form
         document.getElementById('tangerForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            const name = document.getElementById('custName').value;
-            const area = document.getElementById('custArea').value;
+            const name = document.getElementById('custName').value.trim();
+            const area = document.getElementById('custArea').value.trim();
             const orderType = document.getElementById('custOrderType').value;
-            const notes = document.getElementById('custNotes').value || 'لا توجد ملاحظات إضافية';
+            const notes = document.getElementById('custNotes').value.trim() || 'لا توجد ملاحظات إضافية';
 
-            const message = `السلام عليكم IBRA DELIVERY TANGER 🛵💙%0Aأرغب في حجز خدمة التوصيل في طنجة:%0A- *الاسم:* ${encodeURIComponent(name)}%0A- *المنطقة/العنوان بطنجة:* ${encodeURIComponent(area)}%0A- *نوع الطلبية:* ${encodeURIComponent(orderType)}%0A- *ملاحظات:* ${encodeURIComponent(notes)}`;
+            const formattedMessage = 
+`السلام عليكم IBRA DELIVERY TANGER 🛵💙
+أرغب في حجز خدمة التوصيل في طنجة:
+- 👤 *الاسم / المحل:* ${name}
+- 📍 *الحي / العنوان بطنجة:* ${area}
+- 📦 *نوع الطلبية:* ${orderType}
+- 📝 *تفاصيل الطلب وملاحظات:* ${notes}`;
 
-            window.open(`https://wa.me/message/ZVMJZFONM6AHO1?text=${message}`, '_blank');
+            openWhatsAppChat(formattedMessage);
         });
     </script>
 </body>
